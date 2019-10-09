@@ -34,10 +34,26 @@ class WeatherListTableViewController: UITableViewController {
         cell.configure(weatherVM)
         return cell
     }
-    
+    //AddWeatherCityViewController SettingsTableViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "AddWeatherCityViewController" {
+            prepareSegueForAddWeatherCityViewController(segue: segue)
+        } else if segue.identifier == "SettingsTableViewController" {
+            
+        }
+        
+    }
+    
+    private func prepareSegueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
         if let navVC = segue.destination as? UINavigationController, let addWeatherVC = navVC.viewControllers.first as? AddWeatherCityViewController {
             addWeatherVC.delegate = self
+        }
+    }
+    
+    private func prepareSegueForSettingsViewController(segue: UIStoryboardSegue) {
+        if let navVC = segue.destination as? UINavigationController, let settingsVC = navVC.viewControllers.first as? SettingsTableViewController {
+            
         }
     }
     
