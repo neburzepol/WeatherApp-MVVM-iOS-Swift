@@ -34,15 +34,13 @@ class WeatherListTableViewController: UITableViewController {
         cell.configure(weatherVM)
         return cell
     }
-    //AddWeatherCityViewController SettingsTableViewController
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "AddWeatherCityViewController" {
             prepareSegueForAddWeatherCityViewController(segue: segue)
         } else if segue.identifier == "SettingsTableViewController" {
-            
+            prepareSegueForSettingsViewController(segue: segue)
         }
-        
     }
     
     private func prepareSegueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
@@ -53,7 +51,7 @@ class WeatherListTableViewController: UITableViewController {
     
     private func prepareSegueForSettingsViewController(segue: UIStoryboardSegue) {
         if let navVC = segue.destination as? UINavigationController, let settingsVC = navVC.viewControllers.first as? SettingsTableViewController {
-            
+            settingsVC.delegate = self
         }
     }
     
@@ -64,6 +62,16 @@ extension WeatherListTableViewController: AddWeatherDelegate {
     func addWeatherDidSave(viewController: UIViewController, vm: WeatherViewModel) {
         viewController.dismiss(animated: true, completion: nil)
         weatherListViewModel.addWeatherViewModel(vm: vm)
+        self.tableView.reloadData()
+    }
+    
+}
+
+extension WeatherListTableViewController: SettingsDelegate {
+    
+    func settingsDone(viewController: UIViewController, vm: SettingsViewModel) {
+        viewController.dismiss(animated: true)
+        self.weatherListViewModel.updateUnit(to: vm.selectedUnit)
         self.tableView.reloadData()
     }
     
