@@ -23,6 +23,7 @@
 		F39F9007234E9141003E071F /* BindingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F9006234E9141003E071F /* BindingTextField.swift */; };
 		F39F9009234E993B003E071F /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F9008234E993B003E071F /* WeatherDetailsViewController.swift */; };
 		F3F17D5F2354ECCD008584B5 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F17D5E2354ECCD008584B5 /* WeatherDataSource.swift */; };
+		F3F17D6123551164008584B5 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F17D6023551164008584B5 /* TableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F39F9006234E9141003E071F /* BindingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextField.swift; sourceTree = "<group>"; };
 		F39F9008234E993B003E071F /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		F3F17D5E2354ECCD008584B5 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
+		F3F17D6023551164008584B5 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				F3F17D5E2354ECCD008584B5 /* WeatherDataSource.swift */,
+				F3F17D6023551164008584B5 /* TableViewDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				F39F8FF8234D356E003E071F /* WebService.swift in Sources */,
 				F39F9007234E9141003E071F /* BindingTextField.swift in Sources */,
 				F39F8FDD234CE4C0003E071F /* AppDelegate.swift in Sources */,
+				F3F17D6123551164008584B5 /* TableViewDataSource.swift in Sources */,
 				F39F9002234E4922003E071F /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
