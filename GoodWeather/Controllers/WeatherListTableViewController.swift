@@ -63,7 +63,7 @@ extension WeatherListTableViewController: AddWeatherDelegate {
     
     func addWeatherDidSave(viewController: UIViewController, vm: WeatherViewModel) {
         viewController.dismiss(animated: true, completion: nil)
-        weatherListViewModel.addWeatherViewModel(vm: vm)
+        weatherListViewModel.addWeatherViewModel(vm)
         self.dataSource?.updateItems(weatherListViewModel.weatherViewModels)
         self.tableView.reloadData()
     }

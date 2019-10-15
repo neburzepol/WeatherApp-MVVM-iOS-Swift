@@ -39,7 +39,7 @@ struct SettingsViewModel {
             if let value = userDefaults.value(forKey: "unit") as? String {
                 return Unit(rawValue: value)!
             }
-            return selectedUnit
+            return _selectedUnit
         }
         set {
             let userDefaults = UserDefaults.standard

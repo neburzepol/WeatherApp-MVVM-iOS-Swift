@@ -12,7 +12,7 @@ class WeatherListViewModel {
     
     private(set) var weatherViewModels = [WeatherViewModel]()
     
-    func addWeatherViewModel(vm: WeatherViewModel) {
+    func addWeatherViewModel(_ vm: WeatherViewModel) {
         self.weatherViewModels.append(vm)
     }
     
@@ -95,6 +95,11 @@ struct WeatherViewModel: Decodable {
         currentTemperature = try container.decode(TemperatureViewModel.self, forKey: .currentTemperature)
     }
     
+    init(name: Dynamic<String>, currentTemperature: TemperatureViewModel) {
+        self.name = name
+        self.currentTemperature = currentTemperature
+    }
+    
 }
 
 struct TemperatureViewModel: Decodable {
@@ -107,6 +112,14 @@ struct TemperatureViewModel: Decodable {
         case temperature = "temp"
         case temperatureMin = "temp_min"
         case temperatureMax = "temp_max"
+    }
+    
+    init(temperature: Dynamic<Double>,
+         temperatureMin: Dynamic<Double>,
+         temperatureMax: Dynamic<Double>) {
+        self.temperature = temperature
+        self.temperatureMin = temperatureMin
+        self.temperatureMax = temperatureMax
     }
     
     init(from decoder: Decoder) throws {
